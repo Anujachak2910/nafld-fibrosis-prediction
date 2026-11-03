@@ -28,6 +28,8 @@ node_modules/
 **/node_modules/
 dist/
 **/dist/
+!frontend/dist/
+!frontend/dist/**
 .codex-build/
 .chart-data-*/
 
