@@ -6,7 +6,6 @@ import { Overview } from './pages/Overview';
 import { RiskEstimator } from './pages/RiskEstimator';
 import { ModelPerformance } from './pages/ModelPerformance';
 import { DataMethod } from './pages/DataMethod';
-import { LimitationsAbout } from './pages/LimitationsAbout';
 import { checkBackendHealth } from './lib/api';
 
 export const App: React.FC = () => {
@@ -35,8 +34,6 @@ export const App: React.FC = () => {
         {currentTab === 'performance' && <ModelPerformance />}
 
         {currentTab === 'method' && <DataMethod />}
-
-        {currentTab === 'about' && <LimitationsAbout />}
       </main>
 
       <Footer />

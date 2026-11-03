@@ -1,7 +1,7 @@
 import React from 'react';
-import { Activity, BarChart3, Database, FileText, Info } from 'lucide-react';
+import { Activity, BarChart3, Database, FileText } from 'lucide-react';
 
-export type TabId = 'overview' | 'estimator' | 'performance' | 'method' | 'about';
+export type TabId = 'overview' | 'estimator' | 'performance' | 'method';
 
 interface NavigationProps {
   currentTab: TabId;
@@ -31,11 +31,6 @@ export const Navigation: React.FC<NavigationProps> = ({ currentTab, onSelectTab 
       id: 'method',
       label: 'Data & Method',
       icon: <Database className="w-4 h-4" />,
-    },
-    {
-      id: 'about',
-      label: 'Limitations & About',
-      icon: <Info className="w-4 h-4" />,
     },
   ];
 
