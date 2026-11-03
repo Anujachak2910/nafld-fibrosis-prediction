@@ -1,6 +1,6 @@
 # NAFLD fibrosis prediction
 
-Predicting **significant liver fibrosis (stage 2 or higher)** in patients with non-alcoholic fatty liver disease (NAFLD) from routine clinical and laboratory values, as a non-invasive alternative to liver biopsy.
+Exploring whether routine clinical and laboratory data can support non-invasive risk estimation of **significant liver fibrosis (stage 2 or higher)** in patients with non-alcoholic fatty liver disease (NAFLD).
 
 > Research and learning project. It is not a diagnostic tool.
 
@@ -17,10 +17,10 @@ Kaggle dataset "Non-alcohol fatty liver disease (NAFLD)": 605 patients, 62 colum
 | Experiment | Target | Type | Positives / classes |
 |---|---|---|---|
 | A (main) | Significant fibrosis (F >= 2) | Binary | 219 of 605 (36.2%) |
-| B (secondary) | Advanced fibrosis (F >= 3) | Binary | 108 (17.9%) |
-| C (secondary) | Fibrosis group F0-1 / F2 / F3-4 | 3-class | 386 / 111 / 108 |
+| B (optional stretch) | Advanced fibrosis (F >= 3) | Binary | 108 (17.9%) |
+| C (optional stretch) | Fibrosis group F0-1 / F2 / F3-4 | 3-class | 386 / 111 / 108 |
 
-Models: logistic regression, random forest and XGBoost, compared against **FIB-4**, the standard non-invasive fibrosis score.
+Core comparison: Random Forest and logistic regression against **FIB-4**, the clinical benchmark. XGBoost is optional / time permitting.
 
 ## What the EDA established (notebooks/01_eda.ipynb)
 
@@ -58,17 +58,19 @@ nafld-fibrosis-prediction/
 2. Run all cells. The data loads directly from this repository, so no Google Drive is needed.
 3. For modeling, open `notebooks/02_modeling.ipynb`, run the setup cell first (`notebooks/setup_cell.py`), then follow `docs/modeling_handbook.pdf`.
 
-To run locally: clone the repository, install `requirements.txt`, and start Jupyter from the repository root.
+Run the local baseline from the repository root: `.venv\Scripts\python.exe scripts/run_baseline.py`. For a fresh setup, use Python 3.14.5, create a virtual environment, and install with `.venv\Scripts\python.exe -m pip install -r requirements-lock.txt`.
 
 ## Status
 
 - [x] EDA, label verification, leakage control, missing-data analysis, FIB-4 benchmark
-- [ ] Train/test split, preprocessing pipeline and baseline models
-- [ ] Tuning, threshold selection, SHAP and subgroup checks
-- [ ] Secondary experiments (advanced fibrosis, 3-class fibrosis group)
-- [ ] App, report and presentation
+- [x] Leakage-safe data contract, stratified train/test split, preprocessing pipeline, and initial RF/logistic-regression baseline compared with FIB-4
+- [x] Compact RF tuning and development-only CV comparison against logistic regression and FIB-4
+- [x] Nested OOF sensitivity-oriented threshold, permutation importance, and subgroup summaries (SHAP optional / time permitting)
+- [x] Optional F>=3 and three-class experiments (development CV only)
+- [x] Research model bundle and consolidated report packaged
+- [x] Phase 4 presentation completed; optional local demo remains time permitting
 
-Model results will be added here once they exist.
+Initial baseline metrics and the fitted Random Forest pipeline are in `outputs/baseline-v1/`. The holdout was exposed during baseline work, so those holdout metrics are exploratory and not a final validation estimate. Phase 2 development-only tuning and nested OOF comparisons are in `outputs/phase2-v1/`; the tuned RF showed no material gain over the pre-specified RF baseline. Threshold and subgroup results are descriptive because the threshold is evaluated on development OOF data; no independent final validation estimate is claimed. The consolidated report, research model bundle, and editable Phase 4 presentation are in `outputs/final/`. Dataset source/licence verification and an independent external validation remain open.
 
 ## Team
 
@@ -82,3 +84,12 @@ Model results will be added here once they exist.
 ## Licence
 
 Code: MIT (see `LICENSE`). The dataset keeps its original licence, see `data/README.md`.
+
+
+
+
+
+
+
+
+

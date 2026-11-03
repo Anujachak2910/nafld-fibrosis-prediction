@@ -1,0 +1,61 @@
+{
+  "scope": "development data only; the previously viewed holdout is not used",
+  "protocol": {
+    "seed": 42,
+    "folds": 5,
+    "repeats": 3,
+    "oof_folds": 5
+  },
+  "n_development": 484,
+  "development_positives": 175,
+  "search": {
+    "candidates": 8,
+    "best_params": {
+      "model__n_estimators": 300,
+      "model__min_samples_leaf": 5,
+      "model__max_features": "sqrt",
+      "model__max_depth": null,
+      "model__class_weight": "balanced"
+    },
+    "best_mean_cv_roc_auc": 0.7881982322278461,
+    "best_cv_std": 0.056292008219716014
+  },
+  "development_oof_comparison": {
+    "LogisticRegression": {
+      "oof_roc_auc": 0.7317263698247963,
+      "oof_pr_auc": 0.5939635374198817,
+      "oof_auc_difference_vs_fib4": 0.04097384964475681,
+      "paired_auc_difference_95ci": [
+        -0.01168084365540747,
+        0.09388636320410507
+      ],
+      "n_compared": 483
+    },
+    "RandomForest": {
+      "oof_roc_auc": 0.7957817207900905,
+      "oof_pr_auc": 0.6986588088083059,
+      "oof_auc_difference_vs_fib4": 0.10502920061005094,
+      "paired_auc_difference_95ci": [
+        0.05631365132089192,
+        0.15561952265523038
+      ],
+      "n_compared": 483
+    },
+    "TunedRandomForest": {
+      "oof_roc_auc": 0.7961537030837331,
+      "oof_pr_auc": 0.6980125065109013,
+      "oof_auc_difference_vs_fib4": 0.1054011829036936,
+      "paired_auc_difference_95ci": [
+        0.056798062012362406,
+        0.1574251650119295
+      ],
+      "n_compared": 483
+    },
+    "FIB4": {
+      "oof_roc_auc": 0.6907525201800395,
+      "oof_pr_auc": 0.5694393097041246,
+      "n_compared": 483
+    }
+  },
+  "note": "The original baseline holdout was exposed before tuning and is exploratory only; do not report it as a final estimate."
+}

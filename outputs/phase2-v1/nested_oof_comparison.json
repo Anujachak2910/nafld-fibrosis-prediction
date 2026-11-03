@@ -1,0 +1,18 @@
+{
+  "method": "nested repeated CV; outer 5-fold x 3 repeats, inner 3-fold search over 8 RF configurations",
+  "n_development": 484,
+  "n_compared": 483,
+  "outer_prediction_count_min": 3,
+  "outer_prediction_count_max": 3,
+  "tuned_rf_oof_roc_auc": 0.7893650262247518,
+  "tuned_rf_oof_pr_auc": 0.6867716264190986,
+  "fib4_development_roc_auc": 0.6907525201800395,
+  "fib4_development_pr_auc": 0.5694393097041246,
+  "auc_difference_vs_fib4": 0.09861250604471228,
+  "paired_auc_difference_95ci": [
+    0.04924868506084566,
+    0.14837245993792772
+  ],
+  "threshold": null,
+  "threshold_note": "Threshold selection remains in Phase 3 and must use these nested out-of-fold probabilities."
+}

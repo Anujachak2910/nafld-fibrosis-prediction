@@ -1,0 +1,30 @@
+{
+  "dataset_sha256": "525bb40243d0ce95b6177a1716126aec4fb02ee061666a01bded825b764fbae9",
+  "dataset_rows": 605,
+  "feature_count": 33,
+  "training_partition_size": 484,
+  "random_seed": 42,
+  "model_parameters": {
+    "model__n_estimators": 300,
+    "model__min_samples_leaf": 5,
+    "model__max_features": "sqrt",
+    "model__max_depth": null,
+    "model__class_weight": "balanced"
+  },
+  "threshold": 0.41583097288179854,
+  "package_versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "openpyxl": "3.1.5",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2"
+  },
+  "provenance_status": "unverified; do not redistribute data",
+  "artifacts": [
+    "research_model_bundle.joblib",
+    "final_report.md",
+    "stretch-v1/stretch_report.md"
+  ]
+}

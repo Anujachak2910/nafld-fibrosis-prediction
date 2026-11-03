@@ -1,0 +1,90 @@
+{
+  "scope": "optional stretch analyses; development partition only; previous holdout not used",
+  "protocol": {
+    "seed": 42,
+    "folds": 5,
+    "repeats": 3,
+    "n_development": 484
+  },
+  "targets": {
+    "advanced_fibrosis_F_ge_3": {
+      "class_counts": {
+        "0": 395,
+        "1": 89
+      },
+      "models": {
+        "LogisticRegression": {
+          "roc_auc": {
+            "mean": 0.7856540084388185,
+            "std": 0.0502644645136249
+          },
+          "pr_auc": {
+            "mean": 0.49474242104999083,
+            "std": 0.09952004028223882
+          },
+          "balanced_accuracy": {
+            "mean": 0.7144535451311326,
+            "std": 0.04171677669552847
+          }
+        },
+        "RandomForest": {
+          "roc_auc": {
+            "mean": 0.8180993353740933,
+            "std": 0.044989757941646
+          },
+          "pr_auc": {
+            "mean": 0.5782249080121649,
+            "std": 0.09134237804469955
+          },
+          "balanced_accuracy": {
+            "mean": 0.7061360690549076,
+            "std": 0.06388590716951746
+          }
+        }
+      },
+      "fib4_comparator": {
+        "n": 483,
+        "roc_auc": 0.7673244738493128,
+        "pr_auc": 0.479051037853036
+      }
+    },
+    "fibrosis_group_F0_1_F2_F3_4": {
+      "class_counts": {
+        "0": 309,
+        "1": 86,
+        "2": 89
+      },
+      "models": {
+        "LogisticRegression": {
+          "balanced_accuracy": {
+            "mean": 0.4842527018054025,
+            "std": 0.039997766376354826
+          },
+          "f1_macro": {
+            "mean": 0.4657494702178499,
+            "std": 0.033677337672975115
+          },
+          "roc_auc_ovr": {
+            "mean": 0.6761465902648662,
+            "std": 0.03359655411000011
+          }
+        },
+        "RandomForest": {
+          "balanced_accuracy": {
+            "mean": 0.5602821836570969,
+            "std": 0.037399490390137576
+          },
+          "f1_macro": {
+            "mean": 0.5512307872156921,
+            "std": 0.03983505240037438
+          },
+          "roc_auc_ovr": {
+            "mean": 0.7554070795213461,
+            "std": 0.03255386299969491
+          }
+        }
+      },
+      "reference": "FIB-4 is not a three-class classifier; majority-class balanced accuracy is 1/3."
+    }
+  }
+}

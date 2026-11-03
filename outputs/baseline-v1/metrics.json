@@ -1,0 +1,147 @@
+{
+  "protocol": {
+    "seed": 42,
+    "test_fraction": 0.2,
+    "train_fraction": 0.8,
+    "cv_folds": 5,
+    "cv_repeats": 3,
+    "threshold": 0.5,
+    "stratification": "target plus extended-panel indicator; indicator excluded from model features"
+  },
+  "dataset": {
+    "file": "data/NAFLD.xlsx",
+    "sha256": "525bb40243d0ce95b6177a1716126aec4fb02ee061666a01bded825b764fbae9",
+    "n_rows": 605,
+    "n_features": 33,
+    "positive_count": 219,
+    "positive_prevalence": 0.36198347107438017
+  },
+  "package_versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "openpyxl": "3.1.5",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2"
+  },
+  "cross_validation": {
+    "LogisticRegression": {
+      "roc_auc": {
+        "mean": 0.7341149807358164,
+        "std": 0.05087220492090926
+      },
+      "pr_auc": {
+        "mean": 0.6174766524189147,
+        "std": 0.06143616872873845
+      },
+      "balanced_accuracy": {
+        "mean": 0.6700201455516105,
+        "std": 0.049066854565288004
+      },
+      "train_roc_auc": {
+        "mean": 0.8172676962256759,
+        "std": 0.011825716586617643
+      },
+      "folds": 5,
+      "repeats": 3
+    },
+    "RandomForest": {
+      "roc_auc": {
+        "mean": 0.7898647729848155,
+        "std": 0.05503161678704439
+      },
+      "pr_auc": {
+        "mean": 0.6976471770280742,
+        "std": 0.06979633878174053
+      },
+      "balanced_accuracy": {
+        "mean": 0.7184165596434238,
+        "std": 0.05172291166048997
+      },
+      "train_roc_auc": {
+        "mean": 0.996696191471234,
+        "std": 0.0008967499155315259
+      },
+      "folds": 5,
+      "repeats": 3
+    }
+  },
+  "holdout": {
+    "LogisticRegression": {
+      "n": 121,
+      "positives": 44,
+      "prevalence": 0.36363636363636365,
+      "threshold": 0.5,
+      "roc_auc": 0.7154663518299881,
+      "pr_auc": 0.560446815849514,
+      "sensitivity": 0.5681818181818182,
+      "specificity": 0.7012987012987013,
+      "ppv": 0.5208333333333334,
+      "npv": 0.7397260273972602,
+      "balanced_accuracy": 0.6347402597402598,
+      "accuracy": 0.6528925619834711,
+      "f1": 0.5434782608695652,
+      "confusion_matrix": [
+        [
+          54,
+          23
+        ],
+        [
+          19,
+          25
+        ]
+      ]
+    },
+    "RandomForest": {
+      "n": 121,
+      "positives": 44,
+      "prevalence": 0.36363636363636365,
+      "threshold": 0.5,
+      "roc_auc": 0.7125147579693034,
+      "pr_auc": 0.5961867983367566,
+      "sensitivity": 0.5454545454545454,
+      "specificity": 0.7402597402597403,
+      "ppv": 0.5454545454545454,
+      "npv": 0.7402597402597403,
+      "balanced_accuracy": 0.6428571428571428,
+      "accuracy": 0.6694214876033058,
+      "f1": 0.5454545454545454,
+      "confusion_matrix": [
+        [
+          57,
+          20
+        ],
+        [
+          20,
+          24
+        ]
+      ]
+    },
+    "FIB-4 (1.3 cutoff)": {
+      "n": 121,
+      "positives": 44,
+      "prevalence": 0.36363636363636365,
+      "threshold": 1.3,
+      "roc_auc": 0.7550177095631642,
+      "pr_auc": 0.599908404846313,
+      "sensitivity": 0.4772727272727273,
+      "specificity": 0.8311688311688312,
+      "ppv": 0.6176470588235294,
+      "npv": 0.735632183908046,
+      "balanced_accuracy": 0.6542207792207793,
+      "accuracy": 0.7024793388429752,
+      "f1": 0.5384615384615384,
+      "confusion_matrix": [
+        [
+          64,
+          13
+        ],
+        [
+          23,
+          21
+        ]
+      ]
+    }
+  }
+}

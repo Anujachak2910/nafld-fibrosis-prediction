@@ -3,11 +3,11 @@
 **File:** `NAFLD.xlsx`
 **Dataset:** Kaggle, "Non-alcohol fatty liver disease (NAFLD)"
 
-- Source URL: `<paste the Kaggle dataset URL here>`
-- Licence: `<paste the licence shown on the Kaggle dataset page here>`
-- Authors / citation: `<paste the authors and paper listed on the Kaggle page here>`
+- Source URL: **Unverified.** The Kaggle URL supplied for Phase 0 (`https://www.kaggle.com/datasets/utkarshx27/non-alcohol-fatty-liver-disease?select=nafld2.csv`) points to `nafld2.csv`, which is documented as a separate longitudinal lab-measurement table and does not match this 605-row, 62-column workbook. Do not cite it as the source of `NAFLD.xlsx` without confirming provenance.
+- Licence: `[TO FILL: verify the licence for the actual source of NAFLD.xlsx]`
+- Authors / citation: `[TO FILL: verify the authors and citation for the actual source of NAFLD.xlsx]`
 
-The file is redistributed here only because the licence above permits it. If you reuse this repository, check that licence and cite the original authors.
+The file must not be redistributed or republished until the actual source and licence are verified. If you reuse this repository, check the applicable licence and cite the original authors.
 
 ## Contents
 
@@ -26,3 +26,4 @@ https://raw.githubusercontent.com/shrfr/nafld-fibrosis-prediction/main/data/NAFL
 ```
 
 (or from `data/NAFLD.xlsx` when the repository is cloned).
+

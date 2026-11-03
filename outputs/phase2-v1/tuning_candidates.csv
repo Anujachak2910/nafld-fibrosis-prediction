@@ -1,0 +1,9 @@
+rank_test_score,mean_test_score,std_test_score,mean_train_score,params
+1,0.7881982322278461,0.056292008219716014,0.9966635105132557,"{'model__n_estimators': 300, 'model__min_samples_leaf': 5, 'model__max_features': 'sqrt', 'model__max_depth': None, 'model__class_weight': 'balanced'}"
+2,0.7718531389287602,0.0541185592427763,0.9512675920570659,"{'model__n_estimators': 300, 'model__min_samples_leaf': 10, 'model__max_features': 'sqrt', 'model__max_depth': 6, 'model__class_weight': None}"
+3,0.7683624184734709,0.05277171344033674,0.9289773907473399,"{'model__n_estimators': 300, 'model__min_samples_leaf': 15, 'model__max_features': 'sqrt', 'model__max_depth': None, 'model__class_weight': 'balanced'}"
+4,0.7682163632242955,0.053806902220355,0.9523415937486397,"{'model__n_estimators': 300, 'model__min_samples_leaf': 5, 'model__max_features': 0.7, 'model__max_depth': 4, 'model__class_weight': 'balanced'}"
+5,0.7681549192918837,0.052933902995109076,0.9334284143982787,"{'model__n_estimators': 300, 'model__min_samples_leaf': 15, 'model__max_features': 0.7, 'model__max_depth': None, 'model__class_weight': 'balanced'}"
+6,0.767736395457178,0.05399299056617746,0.926937131911665,"{'model__n_estimators': 300, 'model__min_samples_leaf': 15, 'model__max_features': 'sqrt', 'model__max_depth': 6, 'model__class_weight': 'balanced'}"
+7,0.7671390798519301,0.05319633757442133,0.9327193137931679,"{'model__n_estimators': 300, 'model__min_samples_leaf': 15, 'model__max_features': 0.7, 'model__max_depth': 6, 'model__class_weight': 'balanced'}"
+8,0.7636347611493037,0.05397323153038276,0.9189326137925458,"{'model__n_estimators': 300, 'model__min_samples_leaf': 10, 'model__max_features': 'sqrt', 'model__max_depth': 4, 'model__class_weight': None}"

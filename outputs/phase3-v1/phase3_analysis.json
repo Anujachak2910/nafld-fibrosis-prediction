@@ -1,0 +1,465 @@
+{
+  "scope": "development only; the previously viewed holdout is not used",
+  "protocol": {
+    "seed": 42,
+    "outer_folds": 5,
+    "outer_repeats": 3,
+    "inner_folds": 3,
+    "threshold_target_sensitivity": 0.8,
+    "subgroup_metrics": "descriptive development OOF estimates; small groups are inconclusive"
+  },
+  "n_development": 484,
+  "oof_scores_per_patient": {
+    "min": 3,
+    "max": 3
+  },
+  "nested_oof": {
+    "random_forest_roc_auc": 0.7893650262247518,
+    "random_forest_pr_auc": 0.6867716264190986,
+    "fib4_roc_auc": 0.6907525201800395,
+    "fib4_pr_auc": 0.5694393097041246,
+    "auc_difference_rf_minus_fib4": 0.09861250604471228,
+    "paired_auc_difference_95ci": [
+      0.04924868506084566,
+      0.14837245993792772
+    ]
+  },
+  "threshold_selection": {
+    "threshold": 0.41583097288179854,
+    "oof_sensitivity": 0.8045977011494253,
+    "oof_specificity": 0.6504854368932038,
+    "operating_metrics": {
+      "n": 483,
+      "positives": 174,
+      "prevalence": 0.36024844720496896,
+      "threshold": 0.41583097288179854,
+      "sensitivity": 0.8045977011494253,
+      "specificity": 0.6504854368932039,
+      "ppv": 0.5645161290322581,
+      "npv": 0.8553191489361702,
+      "balanced_accuracy": 0.7275415690213146,
+      "confusion_matrix": [
+        [
+          201,
+          108
+        ],
+        [
+          34,
+          140
+        ]
+      ]
+    },
+    "interpretation": "Selected and measured on the same nested development OOF predictions; descriptive only, not an unbiased final operating-point estimate."
+  },
+  "subgroups": {
+    "gender": {
+      "Female": {
+        "n": 239,
+        "positives": 98,
+        "prevalence": 0.4100418410041841,
+        "roc_auc": 0.8053987552467795,
+        "roc_auc_95ci": [
+          0.7444275641893416,
+          0.86356450399376
+        ],
+        "threshold": 0.41583097288179854,
+        "sensitivity": 0.8571428571428571,
+        "specificity": 0.5531914893617021,
+        "ppv": 0.5714285714285714,
+        "npv": 0.8478260869565217,
+        "balanced_accuracy": 0.7051671732522796,
+        "confusion_matrix": [
+          [
+            78,
+            63
+          ],
+          [
+            14,
+            84
+          ]
+        ]
+      },
+      "Male": {
+        "n": 244,
+        "positives": 76,
+        "prevalence": 0.3114754098360656,
+        "roc_auc": 0.769031954887218,
+        "roc_auc_95ci": [
+          0.6968160261596956,
+          0.8324722809592708
+        ],
+        "threshold": 0.41583097288179854,
+        "sensitivity": 0.7368421052631579,
+        "specificity": 0.7321428571428571,
+        "ppv": 0.5544554455445545,
+        "npv": 0.8601398601398601,
+        "balanced_accuracy": 0.7344924812030075,
+        "confusion_matrix": [
+          [
+            123,
+            45
+          ],
+          [
+            20,
+            56
+          ]
+        ]
+      }
+    },
+    "diabetes": {
+      "No": {
+        "n": 302,
+        "positives": 72,
+        "prevalence": 0.23841059602649006,
+        "roc_auc": 0.7279589371980676,
+        "roc_auc_95ci": [
+          0.6571105779059383,
+          0.7964730010942176
+        ],
+        "threshold": 0.41583097288179854,
+        "sensitivity": 0.5694444444444444,
+        "specificity": 0.7956521739130434,
+        "ppv": 0.4659090909090909,
+        "npv": 0.8551401869158879,
+        "balanced_accuracy": 0.6825483091787439,
+        "confusion_matrix": [
+          [
+            183,
+            47
+          ],
+          [
+            31,
+            41
+          ]
+        ]
+      },
+      "Yes": {
+        "n": 181,
+        "positives": 102,
+        "prevalence": 0.56353591160221,
+        "roc_auc": 0.7382725241995532,
+        "roc_auc_95ci": [
+          0.6624617456747564,
+          0.8077070845426789
+        ],
+        "threshold": 0.41583097288179854,
+        "sensitivity": 0.9705882352941176,
+        "specificity": 0.22784810126582278,
+        "ppv": 0.61875,
+        "npv": 0.8571428571428571,
+        "balanced_accuracy": 0.5992181682799702,
+        "confusion_matrix": [
+          [
+            18,
+            61
+          ],
+          [
+            3,
+            99
+          ]
+        ]
+      }
+    },
+    "age_band": {
+      "<50": {
+        "n": 266,
+        "positives": 67,
+        "prevalence": 0.2518796992481203,
+        "roc_auc": 0.752268806720168,
+        "roc_auc_95ci": [
+          0.679074956700257,
+          0.8299948755452375
+        ],
+        "threshold": 0.41583097288179854,
+        "sensitivity": 0.6567164179104478,
+        "specificity": 0.7537688442211056,
+        "ppv": 0.4731182795698925,
+        "npv": 0.8670520231213873,
+        "balanced_accuracy": 0.7052426310657767,
+        "confusion_matrix": [
+          [
+            150,
+            49
+          ],
+          [
+            23,
+            44
+          ]
+        ]
+      },
+      "50-59": {
+        "n": 167,
+        "positives": 78,
+        "prevalence": 0.46706586826347307,
+        "roc_auc": 0.787669259579372,
+        "roc_auc_95ci": [
+          0.7120305310938505,
+          0.8522776673705129
+        ],
+        "threshold": 0.41583097288179854,
+        "sensitivity": 0.8846153846153846,
+        "specificity": 0.5168539325842697,
+        "ppv": 0.6160714285714286,
+        "npv": 0.8363636363636363,
+        "balanced_accuracy": 0.7007346585998271,
+        "confusion_matrix": [
+          [
+            46,
+            43
+          ],
+          [
+            9,
+            69
+          ]
+        ]
+      },
+      "60+": {
+        "n": 50,
+        "positives": 29,
+        "prevalence": 0.58,
+        "roc_auc": 0.6765188834154351,
+        "roc_auc_95ci": [
+          0.5176108511586452,
+          0.8251273344651952
+        ],
+        "threshold": 0.41583097288179854,
+        "sensitivity": 0.9310344827586207,
+        "specificity": 0.23809523809523808,
+        "ppv": 0.627906976744186,
+        "npv": 0.7142857142857143,
+        "balanced_accuracy": 0.5845648604269293,
+        "confusion_matrix": [
+          [
+            5,
+            16
+          ],
+          [
+            2,
+            27
+          ]
+        ]
+      }
+    },
+    "extended_panel": {
+      "No": {
+        "n": 246,
+        "positives": 62,
+        "prevalence": 0.25203252032520324,
+        "roc_auc": 0.7355364656381487,
+        "roc_auc_95ci": [
+          0.6650676447280581,
+          0.8065061182522806
+        ],
+        "threshold": 0.41583097288179854,
+        "sensitivity": 0.7096774193548387,
+        "specificity": 0.6956521739130435,
+        "ppv": 0.44,
+        "npv": 0.8767123287671232,
+        "balanced_accuracy": 0.7026647966339411,
+        "confusion_matrix": [
+          [
+            128,
+            56
+          ],
+          [
+            18,
+            44
+          ]
+        ]
+      },
+      "Yes": {
+        "n": 237,
+        "positives": 112,
+        "prevalence": 0.47257383966244726,
+        "roc_auc": 0.807142857142857,
+        "roc_auc_95ci": [
+          0.7534465518787553,
+          0.8594957089170672
+        ],
+        "threshold": 0.41583097288179854,
+        "sensitivity": 0.8571428571428571,
+        "specificity": 0.584,
+        "ppv": 0.6486486486486487,
+        "npv": 0.8202247191011236,
+        "balanced_accuracy": 0.7205714285714285,
+        "confusion_matrix": [
+          [
+            73,
+            52
+          ],
+          [
+            16,
+            96
+          ]
+        ]
+      }
+    }
+  },
+  "permutation_importance": [
+    {
+      "feature": "Age",
+      "mean_importance": 0.04131530306464206,
+      "fold_sd": 0.012938098856071832
+    },
+    {
+      "feature": "Diyabetes Mellitus (No=0, Yes=1)",
+      "mean_importance": 0.02259776888015918,
+      "fold_sd": 0.01316488933417987
+    },
+    {
+      "feature": "GGT",
+      "mean_importance": 0.011348795044194318,
+      "fold_sd": 0.008931560371058514
+    },
+    {
+      "feature": "Trombosit",
+      "mean_importance": 0.01102294074689634,
+      "fold_sd": 0.012940033624481706
+    },
+    {
+      "feature": "Hemoglobin - A1C",
+      "mean_importance": 0.009918763063131147,
+      "fold_sd": 0.010173194184344262
+    },
+    {
+      "feature": "AST",
+      "mean_importance": 0.009315101609125945,
+      "fold_sd": 0.007595481301786951
+    },
+    {
+      "feature": "Total Bilirubin",
+      "mean_importance": 0.007828662083553702,
+      "fold_sd": 0.004157295221366867
+    },
+    {
+      "feature": "Mean Platelet Volume",
+      "mean_importance": 0.00639157915942688,
+      "fold_sd": 0.0037609292827646746
+    },
+    {
+      "feature": "Glucose",
+      "mean_importance": 0.0060812369368688935,
+      "fold_sd": 0.013078388183001565
+    },
+    {
+      "feature": "Leukocyte",
+      "mean_importance": 0.004961547178363688,
+      "fold_sd": 0.005485796271319629
+    },
+    {
+      "feature": "Ferritin",
+      "mean_importance": 0.004899498879403692,
+      "fold_sd": 0.005201904212471506
+    },
+    {
+      "feature": "Hip Circumference",
+      "mean_importance": 0.004387298229709664,
+      "fold_sd": 0.005938515872837175
+    },
+    {
+      "feature": "Albumin",
+      "mean_importance": 0.0035961824179698426,
+      "fold_sd": 0.0038301892145331724
+    },
+    {
+      "feature": "Total Protein",
+      "mean_importance": 0.0025358213089572267,
+      "fold_sd": 0.0036668122294525383
+    },
+    {
+      "feature": "LDL",
+      "mean_importance": 0.0021966709475963906,
+      "fold_sd": 0.0054840954646497835
+    },
+    {
+      "feature": "Triglycerides",
+      "mean_importance": 0.0019086902873259395,
+      "fold_sd": 0.003955686751728761
+    },
+    {
+      "feature": "Hemoglobin",
+      "mean_importance": 0.0018632620684445262,
+      "fold_sd": 0.0033390938377704563
+    },
+    {
+      "feature": "Body Mass Index",
+      "mean_importance": 0.0018370728513510209,
+      "fold_sd": 0.012157966412910493
+    },
+    {
+      "feature": "ALT",
+      "mean_importance": 0.0017011911057389813,
+      "fold_sd": 0.004895385978036138
+    },
+    {
+      "feature": "Systolic Blood Pressure",
+      "mean_importance": 0.0016004633476870526,
+      "fold_sd": 0.002256809442865231
+    },
+    {
+      "feature": "Hypertension (No=0, Yes=1)",
+      "mean_importance": 0.0015329757497922624,
+      "fold_sd": 0.0023280661945776627
+    },
+    {
+      "feature": "Hyperlipidemia (No=0, Yes=1)",
+      "mean_importance": 0.0012837752763718057,
+      "fold_sd": 0.0021019487332014403
+    },
+    {
+      "feature": "Direct Bilirubin",
+      "mean_importance": 0.0010986376570723611,
+      "fold_sd": 0.003170468644879807
+    },
+    {
+      "feature": "HDL",
+      "mean_importance": 0.0009915640502631672,
+      "fold_sd": 0.004569913100179081
+    },
+    {
+      "feature": "Total Cholesterol",
+      "mean_importance": 0.0009155145929339599,
+      "fold_sd": 0.004427630041139333
+    },
+    {
+      "feature": "Mean Corpuscular Volume",
+      "mean_importance": 0.0009097731107250002,
+      "fold_sd": 0.009924633962379317
+    },
+    {
+      "feature": "LDH",
+      "mean_importance": 0.0008842889879378721,
+      "fold_sd": 0.003799754418961674
+    },
+    {
+      "feature": "Metabolic syndrome (No=0, Yes=1)",
+      "mean_importance": 0.0005692125607514417,
+      "fold_sd": 0.0014537589321414316
+    },
+    {
+      "feature": "Diastolic Blood Pressure",
+      "mean_importance": -5.6004633476856774e-05,
+      "fold_sd": 0.002105389603859268
+    },
+    {
+      "feature": "Waist Circumference",
+      "mean_importance": -0.000153005464480868,
+      "fold_sd": 0.0029606554285046254
+    },
+    {
+      "feature": "Gender (Female=1, Male=2)",
+      "mean_importance": -0.00017385611039759665,
+      "fold_sd": 0.001993181240953946
+    },
+    {
+      "feature": "ALP",
+      "mean_importance": -0.0019476719296920048,
+      "fold_sd": 0.00426290536779345
+    },
+    {
+      "feature": "Smoking Status (Never Smoked=1, Left Smoking=2, Smoking=3)",
+      "mean_importance": -0.002046385132582893,
+      "fold_sd": 0.006636068662855331
+    }
+  ]
+}
