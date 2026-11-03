@@ -1,26 +1,16 @@
 #!/usr/bin/env bash
-# Exit immediately if a command exits with a non-zero status
+# Render build script for NAFLD Fibrosis Risk Estimation
 set -o errexit
 
 echo "========================================="
 echo "  NAFLD Fibrosis Research Model - Render Build"
 echo "========================================="
 
-echo "[1/2] Installing Python dependencies..."
+echo "Installing Python production dependencies..."
 python -m pip install --upgrade pip
 python -m pip install -r requirements-render.txt
 
-echo "[2/2] Checking Frontend Assets..."
-if command -v npm >/dev/null 2>&1; then
-    echo "npm detected: building fresh frontend assets..."
-    cd frontend
-    npm install
-    npm run build
-    cd ..
-else
-    echo "npm not detected in Python native runtime: using committed pre-built frontend/dist assets."
-fi
-
+echo "Verifying pre-built frontend assets..."
 if [ ! -f "frontend/dist/index.html" ]; then
     echo "ERROR: frontend/dist/index.html not found!"
     exit 1
