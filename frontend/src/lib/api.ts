@@ -1,7 +1,8 @@
 import type { PredictionResult } from './types';
 import { THRESHOLD } from './constants';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+// Use VITE_API_URL if configured, otherwise fall back to localhost in dev or same-origin in production
+const API_BASE_URL = import.meta.env.VITE_API_URL ?? (import.meta.env.DEV ? 'http://127.0.0.1:8000' : '');
 
 export async function checkBackendHealth(): Promise<{ online: boolean; message: string }> {
   try {

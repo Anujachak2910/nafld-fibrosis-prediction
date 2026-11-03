@@ -60,6 +60,14 @@ nafld-fibrosis-prediction/
 
 Run the local baseline from the repository root: `.venv\Scripts\python.exe scripts/run_baseline.py`. For a fresh setup, use Python 3.14.5, create a virtual environment, and install with `.venv\Scripts\python.exe -m pip install -r requirements-lock.txt`.
 
+## Deploy on Render
+
+Deploy the interactive fullstack web application for free on [Render](https://render.com):
+1. Push this repository to GitHub: `git push origin main`.
+2. In Render Dashboard, click **New +** > **Blueprint** and connect this repository.
+3. Render automatically provisions the unified service via [`render.yaml`](render.yaml).
+See [`DEPLOY_RENDER.md`](DEPLOY_RENDER.md) for full step-by-step instructions.
+
 ## Status
 
 - [x] EDA, label verification, leakage control, missing-data analysis, FIB-4 benchmark

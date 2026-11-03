@@ -613,6 +613,37 @@ def predict_fibrosis(request: PredictionRequest):
     }
 
 
+# Mount static frontend if built (allows single-service deployment on Render / Docker)
+DIST_DIR = ROOT / "frontend" / "dist"
+if DIST_DIR.exists():
+    from fastapi.staticfiles import StaticFiles
+    from fastapi.responses import FileResponse
+
+    if (DIST_DIR / "assets").exists():
+        app.mount("/assets", StaticFiles(directory=str(DIST_DIR / "assets")), name="assets")
+
+    @app.get("/{full_path:path}", include_in_schema=False)
+    async def serve_spa(full_path: str):
+        if full_path in ["health", "metrics", "feature-schema", "predict", "docs", "openapi.json", "redoc"]:
+            raise HTTPException(status_code=404, detail="Not Found")
+        file_path = DIST_DIR / full_path
+        if file_path.exists() and file_path.is_file():
+            return FileResponse(file_path)
+        return FileResponse(DIST_DIR / "index.html")
+else:
+    @app.get("/")
+    def root():
+        return {
+            "name": "NAFLD Fibrosis Risk Estimation API",
+            "status": "online",
+            "docs": "/docs",
+            "health": "/health",
+            "metrics": "/metrics",
+            "schema": "/feature-schema",
+            "note": "Frontend dist not built. Run 'npm run build' in frontend directory to serve UI."
+        }
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("backend.api:app", host="127.0.0.1", port=8000, reload=True)
